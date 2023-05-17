@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+// import { AuthContext } from "../../provider/AuthProvider";
+// import { useContext } from "react";
 
 const Header = () => {
+  // const {user}=useContext(AuthContext)
 
     const navLits=<>
                 
@@ -35,7 +38,8 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-        <button className="btn btn-outline btn-secondary">Login/Registration</button>
+     
+          <Link to='/login'><button className="btn btn-outline btn-secondary">Login/Registration</button></Link>
         </div>
       </div>
     );
