@@ -29,7 +29,7 @@ const AuthProvider = ({children}) => {
         setLoading(true)
        return createUserWithEmailAndPassword(auth,email,password)
     }
-    const userLogOut=()=>{
+    const logOutUser=()=>{
         setLoading(true)
         return signOut(auth)
     }
@@ -50,7 +50,7 @@ const AuthProvider = ({children}) => {
         createUser,
         userLogIn,
         auth,
-        userLogOut,
+        logOutUser,
         loading,
         googleLogin
     }

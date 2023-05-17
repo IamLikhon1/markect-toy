@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../../provider/AuthProvider";
-// import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import { useContext } from "react";
 
 const Header = () => {
-  // const {user}=useContext(AuthContext)
+  const {user,logOutUser}=useContext(AuthContext);
+  
 
     const navLits=<>
                 
@@ -12,12 +13,26 @@ const Header = () => {
 
                 <li> <Link className="font-semibold" to='/'>CarsToy<span className="text-red-500">World</span></Link> </li>           
                 <li> <Link to='/'>Home</Link> </li>           
-                 <li> <Link to='/'>All Toys</Link> </li>           
-                 <li> <Link to='/'>My Toy</Link> </li>           
-                 <li> <Link to='/'>Add A Toy</Link> </li>           
-                 <li> <Link to='/blog'>Blogs</Link> </li>           
+                <li> <Link to='/'>All Toys</Link> </li> 
+                <li> <Link to='/blog'>Blogs</Link> </li>           
+
+                { user? <><li> <Link to='/'>My Toy</Link> </li>          
+                 <li> <Link to='/'>Add A Toy</Link> </li> 
+                 <p><img className="w-10 h-10 rounded-2xl" src={user?.photoURL} alt="" /></p></>:
+                 <></>}
               
-    </>
+    </>;
+
+    const handleLogOut=()=>{
+      logOutUser()
+    .then(result=>{
+      console.log(result)
+
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+    }
     return (
         <div className="navbar bg-base-100 p-10 h-28 mb-5">
         <div className="navbar-start">
@@ -39,7 +54,7 @@ const Header = () => {
         </div>
         <div className="navbar-end">
      
-          <Link to='/login'><button className="btn btn-outline btn-secondary">Login/Registration</button></Link>
+        { user?<><button onClick={handleLogOut} className="btn btn-outline btn-warning">Log Out</button></>:<><Link to='/login'><button className="btn btn-outline btn-secondary">Login/Registration</button></Link></> }
         </div>
       </div>
     );
