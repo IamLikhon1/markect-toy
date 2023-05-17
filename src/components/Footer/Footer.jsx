@@ -26,7 +26,7 @@ const Footer = () => {
 </footer> 
 <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
   <div className="items-center grid-flow-col">
-  <img className="w-20  md:mr-96" src="https://img.freepik.com/free-vector/sticker-template-with-rocket-rides-fun-fair-isolated_1308-59298.jpg?w=900&t=st=1684339334~exp=1684339934~hmac=6f3406040f516c534e3264a44f975b93aa4236bf0177adf474bc55a69fb0a1c1" alt="" /> 
+  <img className="w-24  md:mr-96" src="https://img.freepik.com/free-vector/sticker-template-with-rocket-rides-fun-fair-isolated_1308-59298.jpg?w=900&t=st=1684339334~exp=1684339934~hmac=6f3406040f516c534e3264a44f975b93aa4236bf0177adf474bc55a69fb0a1c1" alt="" /> 
   </div> 
   <div className="md:place-self-center md:justify-self-end">
     <div className="grid grid-flow-col gap-4">
