@@ -45,7 +45,7 @@ const Login = () => {
             <div className="hero min-h-screen">
   <div className="hero-content flex-col">
     <div className="text-center lg:text-left">
-      <h1 className="text-4xl font-bold text-teal-500">Login</h1>
+      <h1 className="text-4xl font-bold text-orange-500">Login</h1>
     </div>
     <div className="card  w-96 shadow-2xl ">
       <div className="card-body  w-96">
