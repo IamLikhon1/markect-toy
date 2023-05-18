@@ -13,7 +13,7 @@ const Header = () => {
 
                 <li> <Link className="font-semibold" to='/'>Toy Cars<span className="text-red-500">World</span></Link> </li>           
                 <li> <Link to='/'>Home</Link> </li>           
-                <li> <Link to='/'>All Toys</Link> </li> 
+                <li> <Link to='/allToys'>All Toys</Link> </li> 
                 <li> <Link to='/blog'>Blogs</Link> </li>           
 
                 { user? <><li> <Link to='/'>My Toy</Link> </li>          

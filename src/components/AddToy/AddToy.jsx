@@ -28,14 +28,15 @@ const AddToy = () => {
         .then(data=>{
             console.log(data)
             if(data.insertedId){
-                toast.success('Successfully You Added A Toy')
+                toast.success('Successfully You Added A Toy');
+                form.reset()
             }
         })
     }
    
     return (
         <div>
-                    <h2 className="text-3xl text-center">Add Your Toys</h2>
+                    <h2 className="text-4xl text-center text-violet-500 ">Add Your Toys</h2>
 
                     <form onSubmit={handleSubmit} className="mx-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -47,7 +48,7 @@ const AddToy = () => {
                 </div>
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Name</span>
+                    <span className="label-text">Toy Name</span>
                 </label>
                 <input type="text"  name="name" className="input input-bordered" required />
 
