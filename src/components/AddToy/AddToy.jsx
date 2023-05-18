@@ -15,7 +15,7 @@ const AddToy = () => {
         const description=form.description.value;
         const allInfo={picture,name,sellerEmail,sellerName,category,price,rating,quantity,description}
 
-        console.log(allInfo);
+        // console.log(allInfo);
 
         fetch('http://localhost:5000/addToy',{
             method:'POST',
@@ -26,7 +26,7 @@ const AddToy = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             if(data.insertedId){
                 toast.success('Successfully You Added A Toy');
                 form.reset()

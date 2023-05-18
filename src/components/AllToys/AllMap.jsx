@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const AllMap = ({perData}) => {
-    const{sellerName,price,quantity,name,category}=perData
+    const{sellerName,price,quantity,name,category,_id}=perData
 
     return (
        
@@ -10,7 +11,7 @@ const AllMap = ({perData}) => {
         <td>{category}</td>
         <td>{price}</td>
         <td>{quantity}</td>
-        <button className="btn btn-outline btn-secondary mt-3 btn-sm ">View Details</button>
+        <Link to={`/toy/${_id}`}><button className="btn btn-outline btn-secondary mt-3 btn-sm ">View Details</button></Link>
       </tr>
         
     );

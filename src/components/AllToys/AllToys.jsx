@@ -3,7 +3,7 @@ import AllMap from "./AllMap";
 
 const AllToys = () => {
     const dataLoad=useLoaderData();
-    console.log(dataLoad)
+    // console.log(dataLoad)
     return (
         <div>
             <h2 className="text-5xl text-center text-violet-500 my-10">All Selected Toys </h2>
