@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <div className="my-10">
             <div className="grid md:grid-cols-2 mx-20 items-center">
-                <div>
+                <div >
                     <h2 className="text-4xl font-serif font-semibold">A big fun for kids!</h2>
                     <h2 className="text-6xl font-serif font-semibold mt-10 text-violet-500">The Cars Toys World</h2>
                     <h4 className="text-xl mt-10">Delivering smile with toys.Get Your unbeatable fun and leaning experience with our creative cars toys </h4>
