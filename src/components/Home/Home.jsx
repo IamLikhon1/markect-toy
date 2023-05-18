@@ -6,7 +6,7 @@ import Tranding from "../Tranding/Tranding";
 
 const Home = () => {
     return (
-        <div>
+        <div className="">
             {/* banner */}
             <Banner></Banner>
             {/* banner */}
