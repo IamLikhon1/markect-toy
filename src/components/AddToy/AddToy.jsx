@@ -1,19 +1,22 @@
+import { useContext } from "react";
 import { toast } from "react-hot-toast";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AddToy = () => {
+    const {user}=useContext(AuthContext)
     const handleSubmit=(event)=>{
         event.preventDefault();
         const form=event.target;
         const picture=form.picture.value;
         const name=form.name.value;
         const sellerName=form.sellerName.value;
-        const sellerEmail=form.sellerEmail.value;
+        const email=form.email.value;
         const category=form.category.value;
         const price=form.price.value;
         const rating=form.rating.value;
         const quantity=form.quantity.value;
         const description=form.description.value;
-        const allInfo={picture,name,sellerEmail,sellerName,category,price,rating,quantity,description}
+        const allInfo={picture,name,email,sellerName,category,price,rating,quantity,description}
 
         // console.log(allInfo);
 
@@ -74,7 +77,7 @@ const AddToy = () => {
                 <label className="label">
                     <span className="label-text">Seller Email </span>
                 </label>
-            <input type="email" name="sellerEmail"  className="input input-bordered" required />
+            <input type="email" name="email" defaultValue={user.email} className="input input-bordered" required />
 
             </div>
 

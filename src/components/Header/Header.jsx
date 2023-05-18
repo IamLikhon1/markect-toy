@@ -16,7 +16,7 @@ const Header = () => {
                 <li> <Link to='/allToys'>All Toys</Link> </li> 
                 <li> <Link to='/blog'>Blogs</Link> </li>           
 
-                { user? <><li> <Link to='/'>My Toy</Link> </li>          
+                { user? <><li> <Link to='/myToy'>My Toy</Link> </li>          
                  <li> <Link to='/addToy'>Add A Toy</Link> </li> 
                  <p><img className="w-10 h-10 rounded-2xl mr-10" src={user?.photoURL} alt="" /></p></>:
                  <></>}
@@ -26,7 +26,7 @@ const Header = () => {
     const handleLogOut=()=>{
       logOutUser()
     .then(result=>{
-      console.log(result)
+      console.log(result.user)
 
     })
     .catch(error=>{
