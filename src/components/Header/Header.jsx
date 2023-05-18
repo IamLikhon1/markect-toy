@@ -11,14 +11,14 @@ const Header = () => {
               <Link to='/'>  <img  className="w-28  md:mr-96" src="https://img.freepik.com/free-vector/sticker-template-with-rocket-rides-fun-fair-isolated_1308-59298.jpg?w=900&t=st=1684339334~exp=1684339934~hmac=6f3406040f516c534e3264a44f975b93aa4236bf0177adf474bc55a69fb0a1c1" alt="" /> </Link>
 
 
-                <li> <Link className="font-semibold" to='/'>CarsToy<span className="text-red-500">World</span></Link> </li>           
+                <li> <Link className="font-semibold" to='/'>Toy Cars<span className="text-red-500">World</span></Link> </li>           
                 <li> <Link to='/'>Home</Link> </li>           
                 <li> <Link to='/'>All Toys</Link> </li> 
                 <li> <Link to='/blog'>Blogs</Link> </li>           
 
                 { user? <><li> <Link to='/'>My Toy</Link> </li>          
                  <li> <Link to='/'>Add A Toy</Link> </li> 
-                 <p><img className="w-10 h-10 rounded-2xl" src={user?.photoURL} alt="" /></p></>:
+                 <p><img className="w-10 h-10 rounded-2xl mr-10" src={user?.photoURL} alt="" /></p></>:
                  <></>}
               
     </>;

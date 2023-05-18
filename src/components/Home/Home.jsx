@@ -1,5 +1,7 @@
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallary/Gallery";
+import TabBars from "../TabBars/TabBars";
+import Tranding from "../Tranding/Tranding";
 
 const Home = () => {
     return (
@@ -10,6 +12,12 @@ const Home = () => {
             {/* Gallery */}
             <Gallery></Gallery>
             {/* Gallery */}
+            {/* Tab */}
+            <TabBars></TabBars>
+            {/* Tab */}
+            {/* trending */}
+            <Tranding></Tranding>
+            {/* trending */}
         </div>
     );
 };

@@ -3,7 +3,7 @@ const Gallery = () => {
     return (
         <div className="my-10 mx-10 ">
             <hr />
-            <h2 className="text-5xl text-center my-8 font-serif font-medium">Gallery Section</h2>
+            <h2 className="text-5xl text-center my-8 font-serif font-medium text-violet-500">Gallery Section</h2>
             <hr className="mb-10" />
            <div className="grid md:grid-cols-2">
             <div className="grid md:grid-cols-2 gap-5">
@@ -22,7 +22,7 @@ const Gallery = () => {
 
                 <h4 className="text-3xl ml-5 mt-8">Active toys for active and smart kids. <br /> Brings fun and non stop learning for <br /> your little <span className="text-red-400">One</span></h4>
 
-                <button className="btn btn-accent mt-8 ml-5">Read More</button>
+                <button className="btn btn-accent btn-outline mt-8 ml-5">Read More</button>
             </div>
 
            </div>

@@ -27,7 +27,7 @@ const Banner = () => {
     </div>
   </div> 
   <div id="slide3" className="carousel-item relative w-full">
-    <img src="https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740" className="w-full" />
+    <img src="https://img.freepik.com/premium-vector/set-cartoon-car-vector-illustrations_491934-709.jpg?w=740" className="w-full" />
     <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
       <a href="#slide2" className="btn btn-circle mr-6">❮</a> 
       <a href="#slide4" className="btn btn-circle">❯</a>
