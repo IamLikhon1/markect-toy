@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import Gallery from "../Gallary/Gallery";
 
 const Home = () => {
     return (
@@ -6,6 +7,9 @@ const Home = () => {
             {/* banner */}
             <Banner></Banner>
             {/* banner */}
+            {/* Gallery */}
+            <Gallery></Gallery>
+            {/* Gallery */}
         </div>
     );
 };
