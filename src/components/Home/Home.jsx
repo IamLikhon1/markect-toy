@@ -1,8 +1,11 @@
+import Banner from "../Banner/Banner";
 
 const Home = () => {
     return (
         <div>
-            <div className="text-3xl">This is home</div>
+            {/* banner */}
+            <Banner></Banner>
+            {/* banner */}
         </div>
     );
 };
