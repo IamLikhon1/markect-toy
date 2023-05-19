@@ -11,17 +11,17 @@ const TabBars = () => {
 
 
   useEffect(()=>{
-    fetch('http://localhost:5000/categoryOne')
+    fetch('https://toys-cars-server.vercel.app/categoryOne')
     .then(res=>res.json())
     .then(data=>setCategoryOne(data))
   },[]);
   useEffect(()=>{
-    fetch('http://localhost:5000/categoryTwo')
+    fetch('https://toys-cars-server.vercel.app/categoryTwo')
     .then(res=>res.json())
     .then(data=>setCategoryTwo(data))
   },[]);
   useEffect(()=>{
-    fetch('http://localhost:5000/categoryThree')
+    fetch('https://toys-cars-server.vercel.app/categoryThree')
     .then(res=>res.json())
     .then(data=>setCategoryThree(data))
   },[]);
