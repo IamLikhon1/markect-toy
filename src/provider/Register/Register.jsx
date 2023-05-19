@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { toast } from "react-hot-toast";
 
 const Register = () => {
     const [error,setError]=useState('');
     const{createUser}=useContext(AuthContext)
+    const navigate=useNavigate()
     const submitRegister=(event)=>{
        
         event.preventDefault();
@@ -28,6 +29,7 @@ const Register = () => {
         .then(result=>{
             const userLog=result.user;
             console.log(userLog)
+            navigate('/')
         })
         .catch(error=>{
             console.log(error)
