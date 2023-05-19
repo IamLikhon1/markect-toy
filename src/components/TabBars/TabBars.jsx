@@ -30,16 +30,17 @@ const TabBars = () => {
         <div className='my-14'>
             <h2 className="text-5xl font-serif text-center my-10 text-violet-500">Toy Cars Categories</h2>
             <Tabs>
-        <TabList>
-          <Tab>Sports Car</Tab>
-          <Tab>Truck</Tab>
+        <TabList className='text-xl  p-3 font-medium font-serif'>
+          <Tab >Sports Car</Tab>
+          <Tab >Truck</Tab>
           <Tab>Mini Police Car</Tab>
         </TabList>
     
         <TabPanel>
-          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10'>
+          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10' data-aos="fade-up"
+     data-aos-duration="2000">
           {categoryOne.map(pbOne=><div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
-  <figure><img className='w-96 h-56' src={pbOne.picture} alt=""/></figure>
+  <figure><img className='w-full h-56' src={pbOne.picture} alt=""/></figure>
   <div className="card-body">
     <h2 className="card-title">Toy Name: {pbOne.name}</h2>
     <p>Price: ${pbOne.price}</p>
@@ -53,9 +54,11 @@ const TabBars = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className='grid md:grid-cols-2 gap-5 mx-10 my-10'>
+        <div className='grid md:grid-cols-2 gap-5 mx-10 my-10'data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
           {categoryTwo.map(pbOne=><div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
-  <figure><img className='w-96 h-56' src={pbOne.picture} alt=""/></figure>
+  <figure><img className='w-full h-56' src={pbOne.picture} alt=""/></figure>
   <div className="card-body">
     <h2 className="card-title">Toy Name: {pbOne.name}</h2>
     <p>Price: ${pbOne.price}</p>
@@ -68,9 +71,11 @@ const TabBars = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className='grid md:grid-cols-2 gap-5 mx-10 my-10'>
+        <div className='grid md:grid-cols-2 gap-5 mx-10 my-10'data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1000">
           {categoryThree.map(pbOne=><div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
-  <figure><img className='w-96 h-56' src={pbOne.picture} alt=""/></figure>
+  <figure><img className='w-full h-56' src={pbOne.picture} alt=""/></figure>
   <div className="card-body">
     <h2 className="card-title">Toy Name: {pbOne.name}</h2>
     <p>Price: ${pbOne.price}</p>

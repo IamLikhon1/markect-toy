@@ -3,12 +3,14 @@ import {  FaGoogle } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import UseTitle from "../hooks/UseTitle";
 
 const Login = () => {
     const {userLogIn,googleLogin}=useContext(AuthContext)
     const navigate=useNavigate()
     const location=useLocation()
     const from=location.state?.from?.pathname||'/';
+    UseTitle('Login')
 
     const handleLogin=(event)=>{
         event.preventDefault();

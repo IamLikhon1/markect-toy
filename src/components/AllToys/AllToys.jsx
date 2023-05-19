@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import AllMap from "./AllMap";
+import UseTitle from "../../hooks/UseTitle";
 
 const AllToys = () => {
     const dataLoad=useLoaderData();
     // console.log(dataLoad)
+    UseTitle('All Toys')
     return (
         <div>
             <h2 className="text-5xl text-center text-violet-500 my-10">All Selected Toys </h2>
