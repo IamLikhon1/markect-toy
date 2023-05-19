@@ -1,4 +1,5 @@
 import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const MyToyInfo = ({perToy,handleDelete}) => {
     const{sellerName,price,quantity,name,category,_id,picture}=perToy
 
@@ -13,7 +14,7 @@ const MyToyInfo = ({perToy,handleDelete}) => {
         <td>{category}</td>
         <td>{price}</td>
         <td>{quantity}</td>
-        <td><button onClick={()=>handleUpdate(_id)} className="btn btn-info">Update</button></td>
+       <Link to={`/update/${_id}`}><td ><button className='btn btn-secondary'>Update</button></td></Link>
       </tr>
      
        
