@@ -18,9 +18,15 @@ const Header = () => {
 
                 { user? <><li> <Link to='/myToy'>My Toy</Link> </li>          
                  <li> <Link to='/addToy'>Add A Toy</Link> </li> 
-                 <p><img className="w-10 h-10 rounded-2xl mr-10" src={user?.photoURL} alt="" /></p></>:
+                 <p><img className="w-10 h-10 rounded-full mr-10" src={user?.photoURL} alt="" /></p>
+                 
+                 
+                 </>
+                 
+                 :
                  <></>}
-              
+
+                
     </>;
 
     const handleLogOut=()=>{

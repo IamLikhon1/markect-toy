@@ -1,8 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Update = () => {
     const loader=useLoaderData();
     const{_id,price,quantity,description}=loader
+    const navigate=useNavigate()
+
     // console.log(loader);
 
     const handleUpdate=(event)=>{
@@ -25,7 +28,13 @@ const Update = () => {
         .then(data=>{
             console.log(data)
             if(data.modifiedCount>0){
-                alert('updated')
+                Swal.fire({
+                    title: 'Successfully Updated The Information!',
+                    text: 'YaY Updated',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+                  navigate('/myToy')
             }
         })
         
