@@ -64,7 +64,7 @@ const AddToy = () => {
                 </div>
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Sub Category</span>
+                    <span className="label-text">Sub Category-Choose one:- Sports Car/Truck/Mini Police Car</span>
                     
                 </label>
                 
