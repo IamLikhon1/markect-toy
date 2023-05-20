@@ -3,11 +3,22 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 const TabBars = () => {
   const{user}=useContext(AuthContext)
   const [categoryOne,setCategoryOne]=useState([]);
   const [categoryTwo,setCategoryTwo]=useState([]);
   const [categoryThree,setCategoryThree]=useState([]);
+
+  const handleClickOne=()=>{
+    toast.success('You have to log in first to view details')
+  }
+  const handleClickTwo=()=>{
+    toast.success('You have to log in first to view details')
+  }
+  const handleClickThree=()=>{
+    toast.success('You have to log in first to view details')
+  }
 
 
   useEffect(()=>{
@@ -47,7 +58,7 @@ const TabBars = () => {
     <p>Rating: {pbOne.rating}</p>
     <div className="card-actions justify-end">
     { user?<button className="btn btn-primary mt-4">View Details</button>:<>
-    <Link to='/login'><button className="btn btn-primary mt-4">View Details</button></Link></>}
+    <Link to='/login'><button onClick={handleClickOne} className="btn btn-primary mt-4">View Details</button></Link></>}
     </div>
   </div>
 </div></div>)}
@@ -64,7 +75,7 @@ const TabBars = () => {
     <p>Price: ${pbOne.price}</p>
     <p>Rating: {pbOne.rating}</p>
     <div className="card-actions justify-end">
-      { user?<button className="btn btn-secondary mt-4">View Details</button>:<Link to='/login'><button className="btn btn-secondary mt-4">View Details</button></Link>}
+      { user?<button className="btn btn-secondary mt-4">View Details</button>:<Link to='/login'><button onClick={handleClickTwo} className="btn btn-secondary mt-4">View Details</button></Link>}
     </div>
   </div>
 </div></div>)}
@@ -81,7 +92,7 @@ const TabBars = () => {
     <p>Price: ${pbOne.price}</p>
     <p>Rating: {pbOne.rating}</p>
     <div className="card-actions justify-end">
-    { user?<button className="btn btn-accent mt-4">View Details</button>:<Link to='/login'><button className="btn btn-accent mt-4">View Details</button></Link>}
+    { user?<button className="btn btn-accent mt-4">View Details</button>:<Link to='/login'><button onClick={handleClickThree} className="btn btn-accent mt-4">View Details</button></Link>}
     </div>
   </div>
 </div></div>)}
