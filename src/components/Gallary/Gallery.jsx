@@ -5,8 +5,8 @@ const Gallery = () => {
             <hr />
             <h2 className="text-5xl text-center my-8 font-serif font-medium text-violet-500">Gallery Section</h2>
             <hr className="mb-10" />
-           <div className="grid md:grid-cols-2">
-            <div className="grid md:grid-cols-2 gap-5" data-aos="fade-right"
+           <div className="grid md:grid-cols-2 overflow-x-hidden">
+            <div className="grid md:grid-cols-2 gap-5 " data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
                 <img src="https://img.freepik.com/premium-photo/car-crash-accident-traffic-road-insurance-claim-concept_39768-8180.jpg?w=740" alt="" />
