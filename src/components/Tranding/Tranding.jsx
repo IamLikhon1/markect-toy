@@ -1,6 +1,16 @@
 import {  FaStar } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Tranding = () => {
+
+    const handleToast=()=>{
+        Swal.fire({
+            title: 'Thank You !',
+            text: 'For Buy This Toy',
+            icon: 'success',
+            confirmButtonText: 'Done'
+          })
+    }
     return (
         <div className="mx-10 my-16">
             <h2 className="text-5xl  text-center font-serif text-violet-500 font-medium my-16">Our Trending Products</h2>
@@ -18,7 +28,7 @@ const Tranding = () => {
                     <FaStar></FaStar>
                 </div>
                <p>Price:$20.00</p> 
-               <button className="btn btn-primary">Buy Now</button>
+               <button onClick={handleToast} className="btn btn-info">Buy Now</button>
                
             </div>
             </div>
@@ -34,7 +44,7 @@ const Tranding = () => {
                     <FaStar></FaStar>
                 </div>
                <p>Price:$25.00</p> 
-               <button className="btn btn-secondary">Buy Now</button>
+               <button onClick={handleToast}  className="btn btn-info">Buy Now</button>
 
                
             </div>
@@ -51,7 +61,7 @@ const Tranding = () => {
                     <FaStar></FaStar>
                 </div>
                <p>Price:$10.00</p> 
-               <button className="btn btn-success">Buy Now</button>
+               <button onClick={handleToast}  className="btn btn-info">Buy Now</button>
 
                
             </div>
@@ -68,7 +78,7 @@ const Tranding = () => {
                     <FaStar></FaStar>
                 </div>
                <p>Price:$10.00</p> 
-               <button className="btn btn-success">Buy Now</button>
+               <button onClick={handleToast}  className="btn btn-info">Buy Now</button>
 
                
             </div>
@@ -85,7 +95,7 @@ const Tranding = () => {
                     <FaStar></FaStar>
                 </div>
                <p>Price:$15.00</p> 
-               <button className="btn btn-info">Buy Now</button>
+               <button onClick={handleToast}  className="btn btn-info">Buy Now</button>
 
                
             </div>
@@ -102,7 +112,7 @@ const Tranding = () => {
                     <FaStar></FaStar>
                 </div>
                <p>Price:$25.00</p> 
-               <button className="btn btn-secondary">Buy Now</button>
+               <button onClick={handleToast}  className="btn btn-info">Buy Now</button>
 
                
             </div>

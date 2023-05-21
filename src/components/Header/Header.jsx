@@ -31,10 +31,8 @@ const Header = () => {
 
     const handleLogOut=()=>{
       logOutUser()
-    .then(result=>{
-      console.log(result.user)
-
-    })
+   .then(()=>{})
+   
     .catch(error=>{
       console.log(error)
     })
