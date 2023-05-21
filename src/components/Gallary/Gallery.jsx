@@ -26,7 +26,7 @@ const Gallery = () => {
 
                 <h4 className="text-3xl ml-5 mt-8">Active toys for active and smart kids. <br /> Brings fun and non stop learning for <br /> your little <span className="text-red-400">One</span></h4>
 
-                <button className="btn btn-accent btn-outline mt-8 ml-5">Read More</button>
+                <button className="btn btn-accent btn-outline mt-8 ml-5 hover:rounded-3xl">Read More</button>
             </div>
 
            </div>

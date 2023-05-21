@@ -58,7 +58,7 @@ const Header = () => {
         </div>
         <div className="navbar-end">
      
-        { user?<><button onClick={handleLogOut} className="btn btn-outline btn-warning">Log Out</button></>:<><Link to='/login'><button className="btn btn-outline btn-secondary">Login/Registration</button></Link></> }
+        { user?<><button onClick={handleLogOut} className="btn btn-outline btn-warning hover:rounded-3xl">Log Out</button></>:<><Link to='/login'><button className="btn btn-outline btn-secondary hover:rounded-3xl">Login/Registration</button></Link></> }
         </div>
       </div>
     );
