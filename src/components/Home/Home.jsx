@@ -8,7 +8,7 @@ import Tranding from "../Tranding/Tranding";
 const Home = () => {
     UseTitle('Home')
     return (
-        <div className="">
+        <div className=" overflow-x-hidden">
             {/* banner */}
             <Banner></Banner>
             {/* banner */}

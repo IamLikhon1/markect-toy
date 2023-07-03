@@ -1,7 +1,7 @@
 
 const Banner = () => {
     return (
-        <div className="my-10">
+        <div className="my-10"data-aos="zoom-in-up"data-aos-duration="2000">
             <div className="grid md:grid-cols-2 mx-16 items-center">
                 <div >
                     <h2 className="text-4xl font-serif font-semibold">A big fun for kids!</h2>

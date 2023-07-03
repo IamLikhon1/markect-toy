@@ -38,7 +38,7 @@ const TabBars = () => {
   },[]);
 
     return (
-        <div className='my-14'>
+        <div className='my-14'data-aos="zoom-in-up"data-aos-duration="2000">
             <h2 className="text-5xl font-serif text-center my-10 text-violet-500">Toy Cars Categories</h2>
             <Tabs>
         <TabList className='text-xl  p-3 font-medium font-serif'>
@@ -48,8 +48,7 @@ const TabBars = () => {
         </TabList>
     
         <TabPanel>
-          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10' data-aos="fade-up"
-     data-aos-duration="2000">
+          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10' >
           {categoryOne.map(pbOne=><div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
   <figure><img className='w-full h-56' src={pbOne.picture} alt=""/></figure>
   <div className="card-body">

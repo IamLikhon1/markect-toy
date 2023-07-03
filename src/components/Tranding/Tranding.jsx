@@ -12,7 +12,7 @@ const Tranding = () => {
           })
     }
     return (
-        <div className="mx-10 my-16">
+        <div className="mx-10 my-16"data-aos="zoom-in-up"data-aos-duration="1500">
             <h2 className="text-5xl  text-center font-serif text-violet-500 font-medium my-16">Our Trending Products</h2>
            
            <div className="grid md:grid-cols-3 gap-5">
@@ -66,7 +66,7 @@ const Tranding = () => {
                
             </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl"data-aos="zoom-in-up"data-aos-duration="2000">
             <figure><img className="h-80" src="https://img.freepik.com/premium-vector/sport-car-illustration_173474-95.jpg?w=740" alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">Sports Car</h2>
@@ -83,7 +83,7 @@ const Tranding = () => {
                
             </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl"data-aos="zoom-in-up"data-aos-duration="2000">
             <figure><img className="h-80" src="https://img.freepik.com/premium-vector/car-sport_74218-217.jpg?w=826" alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">Sports Car</h2>
@@ -100,7 +100,7 @@ const Tranding = () => {
                
             </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl"data-aos="zoom-in-up"data-aos-duration="2000">
             <figure><img className="h-80" src="https://img.freepik.com/free-vector/sticker-design-with-side-view-police-car-isolated_1308-60981.jpg?w=826&t=st=1684500241~exp=1684500841~hmac=e0035ad6c094b1860520445d6553589f8d61ea518234c4d03ca9a22fb1f1b0a8" alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">Sports Car</h2>

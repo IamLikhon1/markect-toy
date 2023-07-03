@@ -2,8 +2,7 @@ import { FaClock, FaEraser, FaPercent } from "react-icons/fa";
 
 const Services = () => {
     return (
-        <div className="my-20" data-aos="fade-up"
-        data-aos-duration="3000">
+        <div className="my-20"data-aos="zoom-in-up"data-aos-duration="2000">
             <h2 className="text-5xl text-center font-serif font-medium my-10 text-violet-500">Our Services</h2>
             <div className="grid md:grid-cols-3 mx-16">
 

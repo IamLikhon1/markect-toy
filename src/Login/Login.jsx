@@ -68,11 +68,12 @@ const Login = () => {
         <div className="form-control mt-6">
           <button type="submit" className="btn btn-accent">Login</button>
 
-          <button onClick={signInGoogle} className="btn btn-outline btn-primary mt-3"><FaGoogle className="text-black mr-3"></FaGoogle> Sign In Google</button>
+          
           
           <p className="mt-5 text-center font-semibold"><small>New to Toys Cars World? <Link to='/register'><span className="text-orange-500 text-lg">Register</span></Link></small></p>
         </div>
         </form>
+        <button onClick={signInGoogle} className="btn btn-outline btn-primary mt-3"><FaGoogle className="text-black mr-3"></FaGoogle> Sign In Google</button>
       </div>
     </div>
   </div>
