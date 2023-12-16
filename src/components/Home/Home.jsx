@@ -1,6 +1,7 @@
+import CategorySection from "../../NewComponents/CategorySection/CategorySection";
 import UseTitle from "../../hooks/UseTitle";
 import Banner from "../Banner/Banner";
-import Gallery from "../Gallary/Gallery";
+// import Gallery from "../Gallary/Gallery";
 import Services from "../Services/Services";
 import TabBars from "../TabBars/TabBars";
 import Tranding from "../Tranding/Tranding";
@@ -12,9 +13,7 @@ const Home = () => {
             {/* banner */}
             <Banner></Banner>
             {/* banner */}
-            {/* Gallery */}
-            <Gallery></Gallery>
-            {/* Gallery */}
+           <CategorySection/>
             {/* Tab */}
             <TabBars></TabBars>
             {/* Tab */}
