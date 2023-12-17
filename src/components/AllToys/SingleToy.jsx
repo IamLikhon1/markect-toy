@@ -2,12 +2,13 @@ import { useLoaderData } from "react-router-dom";
 import TitleComponent from "../../NewComponents/TitleComponent/TitleComponent";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
-import {  FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { MdOutlineToys } from "react-icons/md";
+import RelatedComponent from "../../NewComponents/RelatedComponent/RelatedComponent";
 
 const SingleToy = () => {
     const singleData = useLoaderData();
-    const { picture, name, email, sellerName, price, rating, quantity, description,category } = singleData;
+    const { picture, name, email, sellerName, price, rating, quantity, description, category } = singleData;
     // console.log(category);
     return (
         <div className="container mx-auto">
@@ -45,17 +46,21 @@ const SingleToy = () => {
                         <p className="font-medium my-2"><span className="font-semibold text-[#181D4E] cursor-pointer">Category:</span> {category}</p>
 
                         <p className="font-medium my-2"><span className="font-semibold text-[#181D4E] ">Tags: </span>
-                         item,  play,  store</p>
+                            item,  play,  store</p>
 
                         <p className="font-medium my-2 flex items-center gap-1"><span className="font-semibold text-[#181D4E] ">Ratings: </span>
-                         {rating} <FaStar  className="text-yellow-300" /></p>
+                            {rating} <FaStar className="text-yellow-300" /></p>
 
                         <p className="font-medium my-2 flex items-center gap-1"><span className="font-semibold text-[#181D4E] ">Quantity: </span>
-                         {quantity} <MdOutlineToys  className="" /></p>
+                            {quantity} <MdOutlineToys className="" /></p>
                     </div>
 
                 </div>
 
+            </div>
+
+            <div className="text-center md:text-start md:mt-20 md:ml-20">
+                <RelatedComponent />
             </div>
         </div>
     );
