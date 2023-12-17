@@ -1,11 +1,11 @@
 
 const SingleTrading = ({item}) => {
     const {name,picture,price}=item
-    console.log(item);
+    // console.log(item);
     return (
         <div>
 
-            <div className="py-8 px-3  border rounded-lg cursor-pointer ">
+            <div className="py-8 px-3  border rounded-lg cursor-pointer my-3 md:my-3">
                 <img src={picture} className="mx-auto h-48 w-fit hover:scale-110 duration-500 rounded-md" alt="" />
             </div>
 

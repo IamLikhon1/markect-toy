@@ -1,4 +1,5 @@
 import CategorySection from "../../NewComponents/CategorySection/CategorySection";
+import ExtraOneSection from "../../NewComponents/ExtraOneSection/ExtraOneSection";
 import UseTitle from "../../hooks/UseTitle";
 import Banner from "../Banner/Banner";
 // import Gallery from "../Gallary/Gallery";
@@ -20,6 +21,9 @@ const Home = () => {
             {/* trending */}
             <Tranding></Tranding>
             {/* trending */}
+            
+            <ExtraOneSection/>
+
             <Services></Services>
             {/* services */}
             {/* services */}
