@@ -1,0 +1,6 @@
+.childImg{
+    background-image: url('../../assets/child.jpg');
+   background-size:cover;
+   background-position:  center;
+   height: 100%;
+}
