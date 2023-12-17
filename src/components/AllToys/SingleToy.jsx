@@ -8,7 +8,7 @@ import { MdOutlineToys } from "react-icons/md";
 const SingleToy = () => {
     const singleData = useLoaderData();
     const { picture, name, email, sellerName, price, rating, quantity, description,category } = singleData;
-    console.log(category);
+    // console.log(category);
     return (
         <div className="container mx-auto">
             <TitleComponent title="Toys Cars World" subTitle="More Information About This Toy" />
@@ -36,7 +36,7 @@ const SingleToy = () => {
                     <div className="mt-8 flex gap-3">
                         <button className="px-14 py-4 rounded-full bg-[#12AEE0] text-white text-center flex items-center gap-2 font-semibold"><AiOutlineShoppingCart className="text-xl" />Buy Now</button>
 
-                        <div className="py-4 px-5 rounded-full border shadow hover:text-sky-500 duration-500 cursor-pointer ">
+                        <div className="py-4 px-5 rounded-full border  hover:text-sky-500 duration-500 cursor-pointer ">
                             <CiHeart className="items-center text-xl " />
                         </div>
                     </div>

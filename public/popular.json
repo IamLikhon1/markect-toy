@@ -1,5 +1,50 @@
 [
     {
-        
+        "id":1,
+        "picture":"https://img.freepik.com/free-photo/child-perspective-motorcar-generic-race_1232-3545.jpg?w=1060&t=st=1702799880~exp=1702800480~hmac=be8174a0bfc5bcd76468205d8ed31f8616ed6052feaa1a4de029378edca89393",
+        "name":"Red Toyota Car",
+        "price":"20"
+    },
+    {
+        "id":2,
+        "picture":"https://img.freepik.com/premium-photo/colorful-toy-blue-plastic-tractor-isolated-white-blue-tractor-toy-children_165968-178.jpg?w=900",
+        "name":"Blue Tractor",
+        "price":"35"
+    },
+    {
+        "id":3,
+        "picture":"https://img.freepik.com/premium-photo/colorful-little-mini-red-plastic-sedan-car-toy-isolated-white-background-mockup-with-copy-space-toys-childrenfor-boys-kids-development-playing-childhood-fun_280499-1721.jpg",
+        "name":"Red Mini Van",
+        "price":"30"
+    },
+    {
+        "id":4,
+        "picture":"https://img.freepik.com/premium-photo/dump-track-toy-loaded-with-blocks_470606-615.jpg?w=1060",
+        "name":"Red Big Truck",
+        "price":"25"
+    },
+    {
+        "id":5,
+        "picture":"https://img.freepik.com/premium-photo/red-vintage-car-with-red-bow-isolated-white-background_132259-761.jpg?w=1380",
+        "name":"Electric Car",
+        "price":"15"
+    },
+    {
+        "id":6,
+        "picture":"https://img.freepik.com/premium-photo/close-up-toy-car-against-white-background_1048944-1148125.jpg?w=1060",
+        "name":"Racing Cars",
+        "price":"40"
+    },
+    {
+        "id":7,
+        "picture":"https://img.freepik.com/premium-photo/blue-race-car-with-black-wheels-white-background_796580-1649.jpg?w=740",
+        "name":"Formula Racing Car",
+        "price":"32"
+    },
+    {
+        "id":8,
+        "picture":"https://img.freepik.com/premium-photo/models-retro-cars-miniature_166347-739.jpg?w=1060",
+        "name":"Old Classic Car",
+        "price":"50"
     }
 ]
