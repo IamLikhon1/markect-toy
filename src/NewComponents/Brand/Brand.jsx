@@ -4,7 +4,7 @@ import cat from '../../assets/cat.png'
 import jar from '../../assets/jar.png'
 const Brand = () => {
     return (
-        <div>
+        <div className='container mx-auto'>
             <h2 className='text-2xl  text-[#181d4e] font-semibold text-center md:hidden mt-8'>We work with the best brands</h2>
             <div className='grid grid-cols-2 md:grid-cols-5 items-center md:my-5 md:px-10'>
                 <img className='w-48 cursor-pointer' src={baby} alt="" />

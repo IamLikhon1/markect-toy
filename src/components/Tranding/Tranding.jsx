@@ -22,10 +22,10 @@ const Tranding = () => {
     //     })
     // }
     return (
-        <div className="mx-10 my-1 py-8 rounded-md ">
+        <div className=" my-1 py-8 rounded-md container mx-auto">
             <TitleComponent title="Toys Car World" subTitle="Popular in Store" />
 
-            <div className='grid md:grid-cols-4 gap-3 md:gap-8 mt-10'>
+            <div className='grid md:grid-cols-4 gap-3 md:gap-8 mt-10 mx-3'>
                 {
                     card.map(item=><SingleTrading
                     key={item.id}

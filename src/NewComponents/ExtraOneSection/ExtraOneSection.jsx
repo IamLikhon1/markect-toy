@@ -6,7 +6,7 @@ import live from '../../assets/live.png'
 const ExtraOneSection = () => {
     return (
         <div>
-            <div className='grid grid-cols-2 md:grid-cols-4'>
+            <div className='grid grid-cols-2 md:grid-cols-4 container mx-auto'>
             <div className='flex md:gap- items-center mx-auto'>
                 <img src={best} className='w-24' alt="" />
                 <div>

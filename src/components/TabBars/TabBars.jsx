@@ -39,7 +39,7 @@ const TabBars = () => {
   }, []);
 
   return (
-    <div className='my-14'>
+    <div className='my-14 container mx-auto'>
      {/* title */}
      <TitleComponent title="RECENT" subTitle="Our Recent Arrives Cars"/>
       <Tabs>
@@ -50,7 +50,7 @@ const TabBars = () => {
         </TabList>
 
         <TabPanel>
-          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10' >
+          <div className='grid md:grid-cols-2 gap-5 mx-3 my-10' >
             {categoryOne.map(pbOne =>  <div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
               <figure><img className='w-full h-56' src={pbOne.picture} alt="" /></figure>
               <div className="card-body">
@@ -66,7 +66,7 @@ const TabBars = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10'>
+          <div className='grid md:grid-cols-2 gap-5 mx-3 my-10'>
             {categoryTwo.map(pbOne => <div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
               <figure><img className='w-full h-56' src={pbOne.picture} alt="" /></figure>
               <div className="card-body">
@@ -74,14 +74,14 @@ const TabBars = () => {
                 <p>Price: ${pbOne.price}</p>
                 <p>Rating: {pbOne.rating}</p>
                 <div className="card-actions justify-end">
-                  {user ? <button className="btn btn-secondary mt-4">View Details</button> : <Link to='/login'><button onClick={handleClickTwo} className="btn btn-secondary mt-4">View Details</button></Link>}
+                  {user ? <button className="btn btn-secondary mt-5 ml-5">View Details</button> : <Link to='/login'><button onClick={handleClickTwo} className="btn btn-secondary mt-5 ml-5">View Details</button></Link>}
                 </div>
               </div>
             </div></div>)}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='grid md:grid-cols-2 gap-5 mx-10 my-10' data-aos="fade-down"
+          <div className='grid md:grid-cols-2 gap-5 mx-3 my-10' data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1000">
             {categoryThree.map(pbOne => <div key={pbOne.id}><div className="card card-side bg-base-100 shadow-xl">
