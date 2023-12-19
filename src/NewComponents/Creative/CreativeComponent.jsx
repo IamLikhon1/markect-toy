@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import animationCircle from '../../assets/circel.json'
 const CreativeComponent = () => {
     return (
-        <div className="mx-5 mt-10 md:mt-20 -mb-32 md:-mb-48">
+        <div className="mx-5 mt-12 md:mt-28 -mb-32 md:-mb-48">
             <div className="grid md:grid-cols-2 gap-5 md:gap-0 container mx-auto">
                 {/* first img */}
                 <div className="md:mx-auto ">

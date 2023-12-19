@@ -3,6 +3,7 @@ import CategorySection from "../../NewComponents/CategorySection/CategorySection
 import CreativeComponent from "../../NewComponents/Creative/CreativeComponent";
 import ExtraOneSection from "../../NewComponents/ExtraOneSection/ExtraOneSection";
 import ExtraTwoSection from "../../NewComponents/ExtraTwoSection/ExtraTwoSection";
+import Testimonial from "../../NewComponents/Testimonial/Testimonial";
 import UseTitle from "../../hooks/UseTitle";
 import Banner from "../Banner/Banner";
 // import Gallery from "../Gallary/Gallery";
@@ -29,6 +30,8 @@ const Home = () => {
             <ExtraTwoSection />
 
             <Brand />
+            
+            <Testimonial/>
         </div>
     );
 };
