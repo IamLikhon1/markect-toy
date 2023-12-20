@@ -1,93 +1,120 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext} from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import { toast } from "react-hot-toast";
 import UseTitle from "../../hooks/UseTitle";
+import SocialSignIn from "../../NewComponents/SocialSignIn/SocialSignIn";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
-    const [error,setError]=useState('');
-    const{createUser}=useContext(AuthContext)
-    UseTitle("Register")
-    const navigate=useNavigate()
-    const submitRegister=(event)=>{
-       
-        event.preventDefault();
-        const form=event.target;
-        const name=form.name.value;
-        const password=form.password.value;
-        const email=form.email.value;
-        const photo=form.photo.value;
-        console.log(name,email,password,photo);
+  const { createUser, updateUserProfile } = useContext(AuthContext)
+  UseTitle("Register")
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
+  const {
+    register,
+    handleSubmit,
+    reset,
+  } = useForm();
 
-        if(password.length<6){
-            setError('Password Have Must Upper 6 characters')
-            
-        }
-        else{
-            toast.success('Successfully Registered')
-            setError('')
-        }
-        createUser(email,password)
-        .then(result=>{
-            const userLog=result.user;
-            console.log(userLog)
-            navigate('/')
-        })
-        .catch(error=>{
-            console.log(error)
-        })
-        form.reset()
-    }
-    return (
-        <div className="grid md:grid-cols-2 p-10">
-            <img src="https://img.freepik.com/free-vector/key-concept-illustration_114360-6305.jpg?w=740&t=st=1684349654~exp=1684350254~hmac=2eff1ea9339d4713fb74e1056c3f9f288471f3e8fae4b9eb627b4e5f4f8e0da4" alt="" />
-            <div className="w-full">
-            <div className="hero min-h-screen">
-  <div className="hero-content flex-col">
-    <div className="text-center lg:text-left">
-      <h1 className="text-4xl font-bold text-teal-500">Register</h1>
-    </div>
-    <div className="card  w-96 shadow-2xl ">
-      <div className="card-body  w-96">
-        <form onSubmit={submitRegister}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Name</span>
-          </label>
-          <input type="text" placeholder="name" name="name" className="input input-bordered" required />
+  const onSubmit = (data) => {
+    const email = data.email;
+    const password = data.password;
+    const name = data.name;
+    const photo = data.pictures
+    createUser(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        updateUserProfile(name, photo)
+          .then(() => {
+            toast.success(`Welcome ${loggedUser?.displayName} You successfully create account`)
+            navigate(from, { replace: true })
+            reset();
+          })
+          .catch(error => {
+            toast.error(error.message)
+          })
+
+      })
+      .catch(error => {
+        console.log(error)
+        toast.error(error.message)
+      })
+    console.log(name, email, password, photo)
+
+  }
+  return (
+    <div className="container mx-auto" >
+      <div className="grid md:grid-cols-12 md:mt-10 items-center">
+
+        {/* img */}
+        <div className="hidden md:block col-span-6 ml-10">
+          <img
+            src="https://img.freepik.com/premium-vector/online-registration-illustration-design-concept-websites-landing-pages-other_108061-939.jpg?w=740"
+            alt="login Img"
+          />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+        {/* img */}
+
+
+        {/* form */}
+        <div className="col-span-6 md:px-10 pt-10 pb-8 shadow-xl  md:mx-28 px-2 mx-1 rounded-md md:mb-5">
+          {/* title */}
+          <div>
+            <h2
+              className="text-2xl font-semibold text-center md:text-start">Sign Up</h2>
+            <p className="text-slate-600 text-sm mt-1 text-center md:text-start">Already have an account? <Link to='/login' className="font-bold text-base text-purple-500 underline">Login</Link></p>
+          </div>
+          {/* input */}
+          <div className="mt-5 md:mt-8">
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {/* name */}
+              <label htmlFor="Name" className="font-medium">Name</label> <br />
+              <input {...register("name", { required: true })} type="text" name="name" className="mt-2 md:ml-1 mb-3 w-full px-5 py-3 rounded-md border-2 focus:outline-none" placeholder="Enter Name" />
+
+              <br />
+
+
+              {/* Email */}
+              <label htmlFor="Email Address" className="font-medium">Email Address</label> <br />
+              <input {...register("email", { required: true })} type="text" name="email" className="mt-2 md:ml-1 mb-3 w-full px-5 py-3 rounded-md border-2 focus:outline-none" placeholder="your@example.com" />
+
+              <br />
+
+              {/* Password */}
+              <label htmlFor="Password" className="font-medium">
+                <span>Password </span>
+              </label> <br />
+              <input {...register("password", { required: true })} type="password" name="password" className="mt-2 md:ml-1 w-full  px-5 py-3 mb-3 rounded-md border-2 focus:outline-none" placeholder="Enter 6 Character and more " />
+
+              {/* Image */}
+
+              <label htmlFor="Image URL" className="font-medium">
+                <span>Image URL </span>
+              </label> <br />
+              <input {...register("pictures", { required: true })} type="text" name="pictures" className="mt-2 md:ml-1 w-full  px-5 py-3 rounded-md border-2 focus:outline-none" placeholder="Provide Image URL " />
+
+              {/* button */}
+              <div>
+                <input type="submit" value='REGISTER' className="mt-8 w-full  px-5 py-3 rounded-md border-2 bg-purple-600 text-white cursor-pointer font-medium" />
+              </div>
+            </form>
+
+            {/* social Login */}
+            <div>
+              <p className="my-5 font-semibold text-center">OR Register With</p>
+
+              <SocialSignIn />
+            </div>
+          </div>
         </div>
-       
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" name="password" className="input input-bordered" required /> 
-          <span className="text-red-500">{error}</span>
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Photo URL</span>
-          </label>
-          <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered" />
-        </div>
-        <div className="form-control mt-6">
-          <button type="submit" className="btn btn-accent">Register</button>
-          <p className="mt-5 text-center font-semibold"><small>Already Have Account! <Link to='/Login'><span className="text-emerald-500 text-lg">Login</span></Link></small></p>
-        </div>
-        </form>
+        {/* form */}
       </div>
     </div>
-  </div>
-</div>
-            </div>
-        </div>
-    );
+  );
 };
 
 export default Register;

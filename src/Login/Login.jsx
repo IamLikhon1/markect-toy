@@ -1,86 +1,99 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {  FaGoogle } from 'react-icons/fa';
-import { useContext } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import UseTitle from "../hooks/UseTitle";
+import { useForm } from "react-hook-form";
+import SocialSignIn from "../NewComponents/SocialSignIn/SocialSignIn";
 
 const Login = () => {
-    const {userLogIn,googleLogin}=useContext(AuthContext)
-    const navigate=useNavigate()
-    const location=useLocation()
-    const from=location.state?.from?.pathname||'/';
-    UseTitle('Login')
+  const { userLogIn} = useContext(AuthContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
+  UseTitle('Login')
+ 
+  const {
+    register,
+    handleSubmit,
+    reset,
+  } = useForm()
 
-    const handleLogin=(event)=>{
-        event.preventDefault();
-        const form=event.target;
-        const email=form.email.value;
-        const password=form.password.value;
+  const onSubmit = (data) => {
+    const email = data.email;
+    const password = data.password;
+    userLogIn(email, password)
+      .then(result => {
+        const signIn = result.user;
+        navigate(from,{replace:true})
+        toast.success(`${signIn?.displayName} You Login successfully`);
+        reset();
+      })
+      .catch(error => {
+        toast.error(error.message)
+      })
 
-       
-        userLogIn(email,password).then(result=>{
-            const logIn=result.user;
-            console.log(logIn)
-            navigate(from,{replace:true})
-            toast.success('You Successfully Login')
-        })
-        .catch(error=>{
-            console.log(error)
-        })
-        form.reset()
-    };
+  };
+  return (
+    <div className="container mx-auto">
+      <div className="grid md:grid-cols-12 md:mt-10 items-center">
 
-    const signInGoogle=()=>{
-        googleLogin()
-        .then(result=>{
-            console.log(result.user)
-            navigate(from,{replace:true})
-        })
-        .catch(error=>console.log(error))
-    }
+        {/* form */}
+        <div className="col-span-6 md:px-10 pt-10 pb-8 shadow-xl md:mx-28 px-2 mx-1 rounded-md">
+          {/* title */}
+          <div>
+            <h2
+              className="text-2xl font-semibold text-center md:text-start">Login</h2>
+            <p className="text-slate-600 text-sm mt-1 text-center md:text-start">{"Doesn't"} have any account yet? <Link to='/register' className="font-bold text-base text-purple-500 underline">Sign up</Link></p>
+          </div>
+          {/* input */}
+          <div className="mt-5 md:mt-8">
 
+            <form onSubmit={handleSubmit(onSubmit)}>
 
-    return (
-        <div className="grid md:grid-cols-2 p-10">
-            <img src="https://img.freepik.com/free-vector/sign-page-abstract-concept-illustration_335657-3875.jpg?w=740&t=st=1684346908~exp=1684347508~hmac=d5c652d062237ff7a52f45c2566b117a727dd8bb10b8586363fe11238b99b3ee" alt="" />
-            <div className="w-full">
-            <div className="hero min-h-screen">
-  <div className="hero-content flex-col">
-    <div className="text-center lg:text-left">
-      <h1 className="text-4xl font-bold text-orange-500">Login</h1>
-    </div>
-    <div className="card  w-96 shadow-2xl ">
-      <div className="card-body  w-96">
-        <form onSubmit={handleLogin}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+              {/* Email */}
+              <label htmlFor="Email Address" className="font-medium">Email Address</label> <br />
+              <input {...register("email", { required: true })} type="text"  name="email" className="mt-2 md:ml-1 mb-5 w-full px-5 py-3 rounded-md border-2 focus:outline-none" placeholder="your@example.com"
+              />
+
+              <br />
+
+              {/* Password */}
+              <label htmlFor="Password" className="font-medium flex justify-between">
+                <span>Password </span>
+                <button  className="text-purple-500 underline text-sm cursor-pointer md:ml-64 ">Forget Password? </button>
+
+              </label>
+              <input {...register("password", { required: true })} type="password" name="password" className=" mt-2 md:ml-1 w-full  px-5 py-3 rounded-md border-2 focus:outline-none" placeholder="Enter 6 Character and more " />
+
+              {/* button */}
+              <div>
+                <input type="submit" value='LOGIN' className="mt-8 w-full  px-5 py-3 rounded-md border-2 bg-purple-600 text-white cursor-pointer font-medium" />
+              </div>
+            </form>
+
+            {/* social Login */}
+            <div>
+              <p className="my-5 font-semibold text-center">OR Login With</p>
+
+              <SocialSignIn />
+            </div>
+          </div>
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" name="password" className="input input-bordered" required />
-        </div>
-        <div className="form-control mt-6">
-          <button type="submit" className="btn btn-accent">Login</button>
+        {/* form */}
 
-          
-          
-          <p className="mt-5 text-center font-semibold"><small>New to Toys Cars World? <Link to='/register'><span className="text-orange-500 text-lg">Register</span></Link></small></p>
+        {/* img */}
+        <div className="hidden md:block col-span-6">
+          <img
+            src="https://img.freepik.com/free-vector/my-password-concept-illustration_114360-4294.jpg?w=740&t=st=1700648476~exp=1700649076~hmac=28643caff113ed92d515fcfef405de4fab06230c82a6d5834c84c2fc66dc4f84"
+            alt="login Img"
+          />
         </div>
-        </form>
-        <button onClick={signInGoogle} className="btn btn-outline btn-primary mt-3"><FaGoogle className="text-black mr-3"></FaGoogle> Sign In Google</button>
+        {/* img */}
+
       </div>
     </div>
-  </div>
-</div>
-            </div>
-        </div>
-    );
+  );
 };
 
 export default Login;

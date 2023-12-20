@@ -6,7 +6,7 @@ const Testimonial = () => {
     return (
         <div>
             <div className='groupKids py-96 md:py-72 relative'>
-                <div className="absolute inset-0 bg-[#181D4E] opacity-95">
+                <div className="absolute inset-0 bg-[#181D4E] opacity-90">
 
                     <div className='md:mt-20 md:px-10'>
                         <div className='grid md:grid-cols-3 text-white text-center items-center mx-3 pt-5 py-20'>
