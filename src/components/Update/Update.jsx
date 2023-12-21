@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import LoadingBarComponent from "../Custome/LoadingBarComponent/LoadingBarComponent";
 
 const Update = () => {
     const loader=useLoaderData();
+    const [progress, setProgress] = useState(0)
     const{_id,price,quantity,description}=loader
     const navigate=useNavigate()
 
@@ -42,6 +45,7 @@ const Update = () => {
     }
     return (
         <div className="mx-10 my-20" >
+            <LoadingBarComponent progress={progress} setProgress={setProgress} />
             <h2 className="text-5xl text-center my-12 font-serif font-medium text-violet-500">Update Below Information</h2>
            <form onSubmit={handleUpdate}>
            <div className="grid md:grid-cols-2 gap-6">
@@ -71,7 +75,7 @@ const Update = () => {
             </div>
             <div className="form-control mt-6">
                 
-                < input type="submit" className="btn btn-success btn-block" value="Update Toy" />
+                < input onClick={() => setProgress(100)} type="submit" className="btn btn-success btn-block" value="Update Toy" />
                 </div>
            </form>
             </div>
