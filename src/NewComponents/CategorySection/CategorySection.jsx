@@ -6,7 +6,7 @@ const CategorySection = () => {
             {/* title */}
             <TitleComponent title="CATEGORIES" subTitle="We design toys not just for kids but with kids"/>
 
-            <div className="mt-10 grid md:grid-cols-4 container mx-auto">
+            <div className="mt-14 grid md:grid-cols-4 container mx-auto">
 
                 {/* imgOne */}
                 <div className="cursor-pointer hover:scale-110 duration-500">
