@@ -1,23 +1,27 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import LoadingBarComponent from "../Custome/LoadingBarComponent/LoadingBarComponent";
 
 const Header = () => {
   const { user, logOutUser } = useContext(AuthContext);
+  const [progress, setProgress] = useState(0)
+
 
 
   const navLits = <>
+    <LoadingBarComponent progress={progress} setProgress={setProgress} />
 
-    <Link to='/'>  <img className="w-28  md:mr-96" src="https://img.freepik.com/free-vector/sticker-template-with-rocket-rides-fun-fair-isolated_1308-59298.jpg?w=900&t=st=1684339334~exp=1684339934~hmac=6f3406040f516c534e3264a44f975b93aa4236bf0177adf474bc55a69fb0a1c1" alt="" /> </Link>
+    <Link onClick={() => setProgress(100)}  to='/'>  <img className="w-28  md:mr-96" src="https://img.freepik.com/free-vector/sticker-template-with-rocket-rides-fun-fair-isolated_1308-59298.jpg?w=900&t=st=1684339334~exp=1684339934~hmac=6f3406040f516c534e3264a44f975b93aa4236bf0177adf474bc55a69fb0a1c1" alt="" /> </Link>
 
 
-    <li> <Link className="font-semibold" to='/'>Toy Cars<span className="text-red-500">World</span></Link> </li>
-    <li> <Link to='/'>Home</Link> </li>
-    <li> <Link to='/allToys'>All Toys</Link> </li>
-    <li> <Link to='/blog'>Blogs</Link> </li>
+    <li> <Link onClick={() => setProgress(100)} className="font-semibold" to='/'>Toy Cars<span className="text-red-500">World</span></Link> </li>
+    <li> <Link onClick={() => setProgress(100)}  to='/'>Home</Link> </li>
+    <li> <Link onClick={() => setProgress(100)}  to='/allToys'>All Toys</Link> </li>
+    <li> <Link onClick={() => setProgress(100)}  to='/blog'>Blogs</Link> </li>
 
-    {user ? <><li> <Link to='/myToy'>My Toy</Link> </li>
-      <li> <Link to='/addToy'>Add A Toy</Link> </li>
+    {user ? <><li> <Link onClick={() => setProgress(100)}  to='/myToy'>My Toy</Link> </li>
+      <li> <Link onClick={() => setProgress(100)}  to='/addToy'>Add A Toy</Link> </li>
       <p><img className="w-10 h-10 rounded-full mr-10" src={user?.photoURL} alt="" /></p>
 
 
@@ -56,9 +60,9 @@ const Header = () => {
           {navLits}
         </ul>
       </div>
-      <div className="navbar-end">
+      <div onClick={() => setProgress(100)}  className="navbar-end">
 
-        {user ? <><button onClick={handleLogOut} className="btn btn-outline btn-warning hover:rounded-3xl">Log Out</button></> : <><Link to='/login'><button className="btn btn-outline btn-secondary hover:rounded-3xl">Login/Registration</button></Link></>}
+        {user ? <><button  onClick={handleLogOut} className="btn btn-outline btn-warning hover:rounded-3xl">Log Out</button></> : <><Link to='/login'><button className="btn btn-outline btn-secondary hover:rounded-3xl">Login/Registration</button></Link></>}
       </div>
     </div>
   );

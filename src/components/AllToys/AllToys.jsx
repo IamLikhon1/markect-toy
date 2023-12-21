@@ -4,7 +4,6 @@ import UseTitle from "../../hooks/UseTitle";
 
 const AllToys = () => {
   const dataLoad = useLoaderData();
-  // console.log(dataLoad)
   UseTitle('All Toys')
   return (
     <div>
