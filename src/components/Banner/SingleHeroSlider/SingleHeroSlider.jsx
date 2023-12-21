@@ -1,4 +1,5 @@
-
+import Lottie from "lottie-react";
+import starAnimation from '../../../assets/Star.json'
 const SingleHeroSlider = ({ slider }) => {
     const { bg } = slider
     return (
@@ -8,7 +9,7 @@ const SingleHeroSlider = ({ slider }) => {
                     <div className='text-white space-y-10 md:space-y-12 pl-3 md:pl-12 w-full text-start'>
                         <h2
                             className='text-4xl md:text-6xl font-bold '>
-                            Pick the best toy <br /> for your kid
+                            Pick The Best Toy <br /> For Your Kid
                         </h2>
                         {/* show on lg */}
                         <p className="md:text-start md:text-2xl hidden md:block">
@@ -18,6 +19,12 @@ const SingleHeroSlider = ({ slider }) => {
                         <p className="md:hidden block text-center pr-2">
                            We offer premium service, weather your are shopping  at one of our flagship stores or via our website.
                         </p>
+                    </div>
+
+                    {/* animation */}
+
+                    <div className=" hidden md:block relative right-48 bottom-24 rotate-90 ">
+                    <Lottie className="w-64" animationData={starAnimation} loop={true} />
                     </div>
 
                 </div>
