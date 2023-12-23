@@ -2,7 +2,7 @@ import TitleComponent from "../TitleComponent/TitleComponent";
 
 const CategorySection = () => {
     return (
-        <div>
+        <div className="my-20">
             {/* title */}
             <TitleComponent title="CATEGORIES" subTitle="We design toys not just for kids but with kids"/>
 
