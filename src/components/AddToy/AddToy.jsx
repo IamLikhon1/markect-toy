@@ -118,7 +118,7 @@ const AddToy = () => {
                 </div>
                 <div className="form-control mt-6">
 
-                    < input onClick={() => setProgress(100)} type="submit" className="btn btn-success btn-block" value="Add Toy" />
+                    < input onClick={() => setProgress(100)} type="submit" className="btn btn-secondary btn-block" value="Add Toy" />
                 </div>
             </form>
             <div className="card-body">

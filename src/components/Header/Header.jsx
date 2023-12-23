@@ -16,14 +16,14 @@ const Header = () => {
     <Link onClick={() => setProgress(100)}  to='/'>  <img className="w-24  md:mr-96" src={WebSiteLogo}alt="" /> </Link>
 
 
-    <li> <Link onClick={() => setProgress(100)} className="font-semibold" to='/'>Toy Cars<span className="text-red-500">World</span></Link> </li>
-    <li> <Link onClick={() => setProgress(100)}  to='/'>Home</Link> </li>
-    <li> <Link onClick={() => setProgress(100)}  to='/allToys'>All Toys</Link> </li>
-    <li> <Link onClick={() => setProgress(100)}  to='/blog'>Blogs</Link> </li>
+    <li> <Link onClick={() => setProgress(100)} className="hover:bg-transparent hover:text-blue-500 focus:text-blue-500 font-semibold focus:bg-transparent" to='/'>Toy Cars<span className="text-red-500">World</span></Link> </li>
+    <li> <Link onClick={() => setProgress(100)} className="hover:bg-transparent hover:text-blue-500 focus:text-blue-500 font-semibold focus:bg-transparent"  to='/'>Home</Link> </li>
+    <li> <Link onClick={() => setProgress(100)} className="hover:bg-transparent hover:text-blue-500 focus:text-blue-500 font-semibold focus:bg-transparent"  to='/allToys'>All Toys</Link> </li>
+    <li> <Link onClick={() => setProgress(100)} className="hover:bg-transparent hover:text-blue-500 focus:text-blue-500 font-semibold focus:bg-transparent"  to='/blog'>Blogs</Link> </li>
 
-    {user ? <><li> <Link onClick={() => setProgress(100)}  to='/myToy'>My Toy</Link> </li>
-      <li> <Link onClick={() => setProgress(100)}  to='/addToy'>Add A Toy</Link> </li>
-      <p><img className="w-10 h-10 rounded-full mr-10" src={user?.photoURL} alt="" /></p>
+    {user ? <><li> <Link onClick={() => setProgress(100)} className="hover:bg-transparent hover:text-blue-500 focus:text-blue-500 font-semibold focus:bg-transparent"  to='/myToy'>My Toy</Link> </li>
+      <li> <Link onClick={() => setProgress(100)} className="hover:bg-transparent hover:text-blue-500 focus:text-blue-500 font-semibold focus:bg-transparent"  to='/addToy'>Add A Toy</Link> </li>
+      <p className="mx-auto"><img className="w-10 h-10 rounded-full md:mt-8 mt-3" src={user?.photoURL} alt="" /></p>
 
 
     </>

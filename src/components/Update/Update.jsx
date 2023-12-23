@@ -75,7 +75,7 @@ const Update = () => {
             </div>
             <div className="form-control mt-6">
                 
-                < input onClick={() => setProgress(100)} type="submit" className="btn btn-success btn-block" value="Update Toy" />
+                < input onClick={() => setProgress(100)} type="submit" className="btn btn-secondary btn-block" value="Update Toy" />
                 </div>
            </form>
             </div>
